@@ -178,28 +178,33 @@ void GameEngine::credits(void) {
 	//chargement du son
 	//defilement du texte
 	#ifdef COMPILEPC
-		_beginthreadex(0, 0, GameEngine::mythread, this, 0, 0);
+		_beginthreadex(0, 0, GameEngine::threadCredits, this, 0, 0);
+	#else
+		LWP_CreateThread(0, GameEngine::threadCredits, this, NULL, 0, 0);
 	#endif
 }
 
-#ifdef COMPILEPC
-void GameEngine::mythread(void)
+void GameEngine::threadCredits(void)
 {
 	int y = 1000;
 	while (currentScreen == INCREDITS) {
-		WaitForSingleObject(semaphore, INFINITE);
-		GraphicsEngine::getInstance()->guienv->clear();
-		GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla1",
-				core::rect<s32>(400,y,660,y+22), true);
-		GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla2",
-				core::rect<s32>(400,y+32,660,y+52), true);
-		GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla3",
-				core::rect<s32>(400,y+62,660,y+82), true);
-		GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla4",
-				core::rect<s32>(400,y+92,660,y+112), true);
-		ReleaseSemaphore(semaphore, 1, 0);
+		#ifdef COMPILEPC
+			WaitForSingleObject(semaphore, INFINITE);
+			GraphicsEngine::getInstance()->guienv->clear();
+			GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla1",
+					core::rect<s32>(400,y,660,y+22), true);
+			GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla2",
+					core::rect<s32>(400,y+32,660,y+52), true);
+			GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla3",
+					core::rect<s32>(400,y+62,660,y+82), true);
+			GraphicsEngine::getInstance()->guienv->addStaticText(L"Blabla4",
+					core::rect<s32>(400,y+92,660,y+112), true);
+			ReleaseSemaphore(semaphore, 1, 0);
+		#else
+			LWP_SemWait(semaphore);
+
+			LWP_SemPost(semaphore);
+		#endif
 		y--;
-		Sleep(20L);
 	}
 }
-#endif

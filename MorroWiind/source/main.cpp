@@ -47,6 +47,8 @@ int main( int argc, char **argv ){
 	#ifdef COMPILEPC
 		GameEngine::getInstance()->semaphore = CreateSemaphore(0, 1, 1, 0);
 		HANDLE hThread = (HANDLE)_beginthreadex(0, 0, &mythread, (void*)0, 0, 0);
+	#else
+		LWP_SemInit(&GameEngine::getInstance()->semaphore, 0, 1);
 	#endif
 	#ifdef TEST1ACTIF
 		GameEngine::getInstance()->pushMessage(TEST1INI);
@@ -57,11 +59,15 @@ int main( int argc, char **argv ){
 	while (!GameEngine::getInstance()->out()) {
 		#ifdef COMPILEPC
 			WaitForSingleObject(GameEngine::getInstance()->semaphore, INFINITE);
+		#else
+			LWP_SemWait(GameEngine::getInstance()->semaphore);
 		#endif
 		GameEngine::getInstance()->pushMessage(ANALYSEETATCOMMANDES);
 		boucleTraitements();
 		#ifdef COMPILEPC
 			ReleaseSemaphore(GameEngine::getInstance()->semaphore, 1, 0);
+		#else
+			LWP_SemPost(GameEngine::getInstance()->semaphore);
 		#endif
 	}
 
@@ -76,6 +82,8 @@ int main( int argc, char **argv ){
 		WaitForSingleObject(hThread, INFINITE);
 		CloseHandle(hThread);
 		CloseHandle(GameEngine::getInstance()->semaphore);
+	#else
+		LWP_SemDestroy (GameEngine::getInstance()->semaphore);
 	#endif
 
 	return 0;

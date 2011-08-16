@@ -14,6 +14,8 @@
 	#include "EventReceiver.h"
 	#include <Windows.h>
 	#include <process.h>
+#else
+	#include <ogc/lwp.h>
 #endif
 
 class GameEngine : public Singleton<GameEngine>, public Engine {
@@ -29,17 +31,25 @@ public:
 	bool out(void){return sortie;};
 #ifdef COMPILEPC
 	EventReceiver* getReceiver(void){return &receiver;};
-	static unsigned int __stdcall mythread(void * pThis){
+	static unsigned int __stdcall threadCredits(void * pThis){
 		GameEngine * pthX = (GameEngine*)pThis;   // the tricky cast
-		pthX->mythread();           // now call the true entry-point-function
+		pthX->threadCredits();           // now call the true entry-point-function
 		return 1;}
-	void mythread(void);
+	void threadCredits(void);
+#else
+	static void * threadCredits(void * pThis){
+		GameEngine * pthX = (GameEngine*)pThis;
+		pthX->threadCredits();
+		return 0;}
+	void threadCredits(void);
 #endif
 	void nextLoop(void);
 
 #ifdef COMPILEPC
 public:
 	HANDLE semaphore;
+#else
+	sem_t semaphore;
 #endif
 private:
 	void analyseEtatCommandes(void);
