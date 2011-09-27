@@ -56,14 +56,16 @@
 <tool id="org.eclipse.cdt.build.core.settings.holder.1853242704" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
 <option id="org.eclipse.cdt.build.core.settings.holder.undef.incpaths.553811542" name="Undefined Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.undef.incpaths" valueType="undefIncludePath">
 <listOptionValue builtIn="false" value="K:/MinGW/lib/gcc/mingw32/3.4.5/include"/>
-<listOptionValue builtIn="false" value="K:/MinGW/include/c++/3.4.5/backward"/>
 <listOptionValue builtIn="false" value="K:/MinGW/include"/>
+<listOptionValue builtIn="false" value="K:/MinGW/include/c++/3.4.5/backward"/>
 <listOptionValue builtIn="false" value="K:/MinGW/include/c++/3.4.5/mingw32"/>
 <listOptionValue builtIn="false" value="K:/MinGW/include/c++/3.4.5"/>
 </option>
 <option id="org.eclipse.cdt.build.core.settings.holder.incpaths.290500646" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;F:\devkitpro\libogc\include&quot;"/>
 <listOptionValue builtIn="false" value="&quot;F:\GRRLIB\GRRLIB\GRRLIB&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TinyXml}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/NifLib/include}&quot;"/>
 </option>
 <inputType id="org.eclipse.cdt.build.core.settings.holder.inType.53579225" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 </tool>
@@ -83,6 +85,11 @@
 </tool>
 </toolChain>
 </folderInfo>
+<sourceEntries>
+<entry excluding="src|tinyxml" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="tinyxml"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+</sourceEntries>
 </configuration>
 </storageModule>
 <storageModule moduleId="scannerConfiguration">
@@ -251,7 +258,9 @@
 </profile>
 </scannerConfigBuildInfo>
 </storageModule>
-<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+<externalSettings containerId="NifLib;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+</storageModule>
 <storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
 <storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cconfiguration>

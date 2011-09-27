@@ -3,6 +3,9 @@
 	<name>MorroWiind</name>
 	<comment></comment>
 	<projects>
+		<project>NifLib</project>
+		<project>TinyXml</project>
+		<project>External</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -75,4 +78,16 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.core.cnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>C:/DevJPC/niflib-0.7.2/src</location>
+		</link>
+		<link>
+			<name>tinyxml</name>
+			<type>2</type>
+			<location>C:/DevJPC/tinyxml</location>
+		</link>
+	</linkedResources>
 </projectDescription>

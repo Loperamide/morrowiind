@@ -17,9 +17,9 @@ include $(DEVKITPPC)/wii_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source
+SOURCES		:=	source ../TinyXml ../NifLib/src
 DATA		:=	data  
-INCLUDES	:=	source/headers F:\GRRLIB\GRRLIB\GRRLIB
+INCLUDES	:=	source/headers F:\GRRLIB\GRRLIB\GRRLIB ../TinyXml ../NifLib/include
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -102,9 +102,8 @@ export OUTPUT	:=	$(CURDIR)/$(TARGET)
 
 #---------------------------------------------------------------------------------
 $(BUILD):
-	@[ -d $@ ] || mkdir -p $@
-	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-
+	[ -d $@ ] || mkdir -p $@
+	$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...

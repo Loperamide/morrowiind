@@ -7,8 +7,8 @@
 
 #include "headers/GameEngine.h"
 #include "headers/GraphicsEngine.h"
-#include "headers/tinyxml.h"
-#include "headers/tinystr.h"
+#include <tinyxml.h>
+#include <tinystr.h>
 #include "headers/Tes3.h"
 
 bool GameEngine::init(void){
