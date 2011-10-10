@@ -142,7 +142,6 @@ void GameEngine::test1ini(void){
 void GameEngine::loadMenu(void) {
 	//chargement de l'image de fond
 	//chargement du son
-
 	//Modification de l'état de l'écran en cours
 	currentScreen = INMENU;
 }

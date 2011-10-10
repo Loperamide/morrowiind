@@ -43,6 +43,6 @@ void Info::trtSousBalise(subRecord* sousEnreg, char* bufferChar){
 	} else if (!memcmp("FLTV", sousEnreg->name, 4)) {
 	} else if (!memcmp("BNAM", sousEnreg->name, 4)) {
 	} else {
-		cout << "Erreur BODY subEnreg " << sousEnreg->name << endl;
+		cout << "Erreur INFO subEnreg " << sousEnreg->name << endl;
 	}
 }

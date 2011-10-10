@@ -11,6 +11,16 @@
 #include "defBalises.h"
 #include "BaseBalise.h"
 
+typedef struct baliseSchd baliseSchd;
+struct baliseSchd {
+	char Name[32];
+	long NumShorts;
+	long NumLongs;
+	long NumFloats;
+	long ScriptDataSize;
+	long LocalVarSize;
+};
+
 class Scpt : public BaseBalise {
 friend class BaseBalise;
 private:
@@ -18,6 +28,8 @@ private:
 public:
 	Scpt();
 	virtual ~Scpt();
+private:
+	baliseSchd header;
 };
 
 #endif /* SCPT_H_ */

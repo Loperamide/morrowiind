@@ -7,7 +7,6 @@
 
 #include "headers/GraphicsEngine.h"
 #include "headers/GameEngine.h"
-#include <stdio.h>
 
 void GraphicsEngine::init(void){
 #ifndef COMPILEPC
@@ -52,4 +51,12 @@ void GraphicsEngine::clean(void){
 #else
 	device->drop();
 #endif
+}
+
+void GraphicsEngine::loadImage(char *image,int posx,int posy)
+{
+	#ifndef COMPILEPC
+
+	#else
+	#endif
 }

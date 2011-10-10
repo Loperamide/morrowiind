@@ -22,6 +22,7 @@ protected:
 public:
 	void init(void);
 	void nextLoop(void);
+	void loadImage(char*,int,int);//Chargement d'une image
 private:
 	void drawAll();
 public:
