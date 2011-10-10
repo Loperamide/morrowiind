@@ -28,9 +28,12 @@
 <option id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.1023626253" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.cpp.compiler.option.preprocessor.def.969099998" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="COMPILEPC"/>
+<listOptionValue builtIn="false" value="NIFLIB_STATIC_LINK"/>
 </option>
 <option id="gnu.cpp.compiler.option.include.paths.1788398504" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;K:\Libs\irrlicht\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TinyXml}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/NifLib/include}&quot;"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1279875784" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 </tool>
@@ -55,8 +58,12 @@
 </toolChain>
 </folderInfo>
 <sourceEntries>
-<entry excluding="source" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+<entry excluding="TriStripper|NvTriStrip|src|TinyXml|source" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TinyXml"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="NvTriStrip"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="TriStripper"/>
 </sourceEntries>
 </configuration>
 </storageModule>
@@ -508,6 +515,12 @@
 <option id="gnu.cpp.compiler.option.preprocessor.def.1847460097" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="COMPILEPC"/>
 <listOptionValue builtIn="false" value="TEST1ACTIF"/>
+<listOptionValue builtIn="false" value="NIFLIB_STATIC_LINK"/>
+</option>
+<option id="gnu.cpp.compiler.option.include.paths.13285662" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/TinyXml}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/NifLib/include}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;K:\Libs\irrlicht\include&quot;"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1240109225" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 </tool>
@@ -518,6 +531,12 @@
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release.1857817346" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release"/>
 <tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release.1956605415" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release">
+<option id="gnu.cpp.link.option.libs.522795845" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+<listOptionValue builtIn="false" value="Irrlicht"/>
+</option>
+<option id="gnu.cpp.link.option.paths.1115781019" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+<listOptionValue builtIn="false" value="&quot;K:\Libs\irrlicht\lib\Win32-gcc&quot;"/>
+</option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.434341716" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 <additionalInput kind="additionalinput" paths="$(LIBS)"/>
