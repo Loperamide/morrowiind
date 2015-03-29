@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Repa.h"
+#include "Repa.h"
 
 Repa::Repa() {
 	// TODO Auto-generated constructor stub

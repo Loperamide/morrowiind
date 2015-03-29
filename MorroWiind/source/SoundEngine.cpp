@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/SoundEngine.h"
+#include "SoundEngine.h"
 
 void SoundEngine::init(void){
 }

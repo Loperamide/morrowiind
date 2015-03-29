@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Gmst.h"
+#include "Gmst.h"
 
 Gmst::Gmst() {
 	// TODO Auto-generated constructor stub

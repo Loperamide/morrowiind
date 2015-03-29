@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Scpt.h"
+#include "Scpt.h"
 
 Scpt::Scpt() {
 	// TODO Auto-generated constructor stub

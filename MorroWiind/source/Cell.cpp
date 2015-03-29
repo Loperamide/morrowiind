@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Cell.h"
+#include "Cell.h"
 
 Cell::Cell() {
 	// TODO Auto-generated constructor stub

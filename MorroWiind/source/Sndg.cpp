@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Sndg.h"
+#include "Sndg.h"
 
 Sndg::Sndg() {
 	// TODO Auto-generated constructor stub

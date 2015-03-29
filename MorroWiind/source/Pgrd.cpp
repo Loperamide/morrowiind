@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Pgrd.h"
+#include "Pgrd.h"
 
 Pgrd::Pgrd() {
 	// TODO Auto-generated constructor stub

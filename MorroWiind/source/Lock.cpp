@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Lock.h"
+#include "Lock.h"
 
 Lock::Lock() {
 	// TODO Auto-generated constructor stub

@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Tes3.h"
+#include "Tes3.h"
 
 Dial* newDial = NULL;
 

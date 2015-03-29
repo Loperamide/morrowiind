@@ -5,12 +5,12 @@
  *      Author: jpCapelle
  */
 
-#include "headers/global.h"
+#include "global.h"
 
-#include "headers/GameEngine.h"
-#include "headers/GraphicsEngine.h"
-#include "headers/ScriptEngine.h"
-#include "headers/SoundEngine.h"
+#include "GameEngine.h"
+#include "GraphicsEngine.h"
+#include "ScriptEngine.h"
+#include "SoundEngine.h"
 
 #ifdef COMPILEPC
 #include <Windows.h>

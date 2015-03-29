@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Ligh.h"
+#include "Ligh.h"
 
 Ligh::Ligh() {
 	// TODO Auto-generated constructor stub

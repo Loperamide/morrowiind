@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Skil.h"
+#include "Skil.h"
 
 Skil::Skil() {
 	// TODO Auto-generated constructor stub

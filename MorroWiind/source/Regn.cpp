@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Regn.h"
+#include "Regn.h"
 
 Regn::Regn() {
 	// TODO Auto-generated constructor stub

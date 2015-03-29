@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Land.h"
+#include "Land.h"
 
 Land::Land() {
 	// TODO Auto-generated constructor stub

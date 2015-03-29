@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Bsgn.h"
+#include "Bsgn.h"
 
 Bsgn::Bsgn() {
 	// TODO Auto-generated constructor stub

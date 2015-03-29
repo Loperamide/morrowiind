@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Info.h"
+#include "Info.h"
 
 Info::Info() {
 	// TODO Auto-generated constructor stub

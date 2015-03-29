@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Npc_.h"
+#include "Npc_.h"
 
 Npc_::Npc_() {
 	// TODO Auto-generated constructor stub

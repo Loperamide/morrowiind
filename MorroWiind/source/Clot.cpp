@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Clot.h"
+#include "Clot.h"
 
 Clot::Clot() {
 	// TODO Auto-generated constructor stub

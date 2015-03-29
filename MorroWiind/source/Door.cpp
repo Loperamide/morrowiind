@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Door.h"
+#include "Door.h"
 
 Door::Door() {
 	// TODO Auto-generated constructor stub

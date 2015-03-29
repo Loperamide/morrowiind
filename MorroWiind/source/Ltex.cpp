@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Ltex.h"
+#include "Ltex.h"
 
 Ltex::Ltex() {
 	// TODO Auto-generated constructor stub

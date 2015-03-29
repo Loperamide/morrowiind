@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Book.h"
+#include "Book.h"
 
 Book::Book() {
 	// TODO Auto-generated constructor stub

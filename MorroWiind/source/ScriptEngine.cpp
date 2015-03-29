@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/ScriptEngine.h"
+#include "ScriptEngine.h"
 
 void ScriptEngine::init(void){
 }

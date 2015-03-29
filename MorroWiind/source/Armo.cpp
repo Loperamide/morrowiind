@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Armo.h"
+#include "Armo.h"
 
 Armo::Armo() {
 	tmpBdyPartOpen = false;

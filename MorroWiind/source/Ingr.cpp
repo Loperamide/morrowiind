@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Ingr.h"
+#include "Ingr.h"
 
 Ingr::Ingr() {
 	// TODO Auto-generated constructor stub

@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Body.h"
+#include "Body.h"
 
 Body::Body() {
 	// TODO Auto-generated constructor stub

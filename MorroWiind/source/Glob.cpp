@@ -5,8 +5,8 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Glob.h"
-#include "headers/defBalises.h"
+#include "Glob.h"
+#include "defBalises.h"
 
 Glob::Glob() {
 	// TODO Auto-generated constructor stub

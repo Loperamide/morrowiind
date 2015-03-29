@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Prob.h"
+#include "Prob.h"
 
 Prob::Prob() {
 	// TODO Auto-generated constructor stub

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MorroWiind" />
+		<Option platforms="Windows;" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="ppc-gcc" />
+		<Build>
+			<Target title="build">
+				<Option output="default/MorroWiind.elf" prefix_auto="0" extension_auto="0" />
+				<Option object_output="default" />
+				<Option type="1" />
+				<Option compiler="gnu_gcc_for_wii" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="clean">
+				<Option output="MorroWiind" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_for_wii" />
+			</Target>
+			<Target title="nettoie">
+				<Option output="MorroWiind" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_for_wii" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-g" />
+			<Add option="-O2" />
+			<Add option="-fno-common" />
+			<Add option="-mcpu=505" />
+			<Add option="-meabi" />
+			<Add option="-D_ARCH_PPC555" />
+			<Add option="-DPHYCORE_MPC565" />
+			<Add directory="src" />
+			<Add directory="h" />
+		</Compiler>
+		<Linker>
+			<Add option="-Wl,-Map,map.txt" />
+			<Add option="-T ld/target.ld" />
+			<Add option="-mcpu=505" />
+		</Linker>
+		<Unit filename="Makefile" />
+		<Unit filename="headers/Acti.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Alch.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/AllBalises.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Appa.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Armo.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/BaseBalise.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Body.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Book.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Bsgn.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Cell.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Clas.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Clot.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Cont.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Crea.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Dial.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Door.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Ench.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Engine.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/EventReceiver.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Fact.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/GameEngine.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Glob.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Gmst.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/GraphicsEngine.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Info.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Ingr.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Land.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Levc.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Levi.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Ligh.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Lock.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Ltex.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Mgef.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Misc.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Npc_.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Pgrd.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Prob.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Race.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Regn.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Repa.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Scpt.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/ScriptEngine.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Singleton.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Skil.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Sndg.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Soun.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/SoundEngine.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Spel.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Stat.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Tes3.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/Weap.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/defBalises.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/defines.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="headers/global.h">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Acti.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Alch.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Appa.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Armo.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/BaseBalise.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Body.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Book.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Bsgn.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Cell.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Clas.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Clot.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Cont.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Crea.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Dial.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Door.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Ench.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Engine.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Fact.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/GameEngine.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Glob.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Gmst.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/GraphicsEngine.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Info.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Ingr.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Land.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Levc.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Levi.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Ligh.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Lock.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Ltex.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Mgef.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Misc.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Npc_.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Pgrd.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Prob.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Race.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Regn.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Repa.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Scpt.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/ScriptEngine.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Singleton.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Skil.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Sndg.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Soun.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/SoundEngine.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Spel.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Stat.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Tes3.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/Weap.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/defBalises.cpp">
+			<Option target="build" />
+		</Unit>
+		<Unit filename="source/main.cpp">
+			<Option target="build" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

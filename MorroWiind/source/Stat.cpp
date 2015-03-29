@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Stat.h"
+#include "Stat.h"
 
 Stat::Stat() {
 	// TODO Auto-generated constructor stub

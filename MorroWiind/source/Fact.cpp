@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Fact.h"
+#include "Fact.h"
 
 Fact::Fact() {
 	// TODO Auto-generated constructor stub

@@ -4,7 +4,7 @@
  *  Created on: 16 mars 2011
  *      Author: jpCapelle
  */
-#include "headers/defBalises.h"
+#include "defBalises.h"
 
 DefBalises::DefBalises(){
 	// TODO Auto-generated constructor stub

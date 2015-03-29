@@ -5,8 +5,8 @@
  *      Author: jpCapelle
  */
 
-#include "headers/GraphicsEngine.h"
-#include "headers/GameEngine.h"
+#include "GraphicsEngine.h"
+#include "GameEngine.h"
 
 void GraphicsEngine::init(void){
 #ifndef COMPILEPC

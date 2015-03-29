@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Race.h"
+#include "Race.h"
 
 Race::Race() {
 	// TODO Auto-generated constructor stub

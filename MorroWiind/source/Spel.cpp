@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Spel.h"
+#include "Spel.h"
 
 Spel::Spel() {
 	// TODO Auto-generated constructor stub

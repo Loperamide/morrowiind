@@ -9,6 +9,14 @@ endif
 
 include $(DEVKITPPC)/wii_rules
 
+GRRLIB_INCLUDE := D:/LibsCpp/GRRLIB/GRRLIB/GRRLIB
+TYNIXML_INCLUDE := D:/LibsCpp/tinyxml2-master
+TYNIXML_SOURCE := D:/LibsCpp/tinyxml2-master
+NIFLIB_INCLUDE := D:/LibsCpp/niflib-0.8.3-src/include
+IRRLICHT_INCLUDE := D:/LibsCpp/irrlicht-1.8/include
+LIBGRR := D:\LibsCpp\GRRLIB\GRRLIB
+LIBGRRBIS := D:\LibsCpp\GRRLIB\GRRLIB\lib
+
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
 # BUILD is the directory where object files & intermediate files will be placed
@@ -17,9 +25,13 @@ include $(DEVKITPPC)/wii_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source ../TinyXml ../NifLib/src
-DATA		:=	data  
-INCLUDES	:=	source/headers F:\GRRLIB\GRRLIB\GRRLIB ../TinyXml ../NifLib/include
+SOURCES		:=	source
+SOURCES_DIRECT		:=	$(TYNIXML_SOURCE)
+#SOURCES		:=	source
+DATA		:=	data
+INCLUDES	:=	headers
+OTHER_INCLUDES := $(GRRLIB_INCLUDE) $(TYNIXML_INCLUDE) $(NIFLIB_INCLUDE)
+
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -41,7 +53,6 @@ LIBS	:= -lgrrlib -lfreetype -ljpeg -lpng -lpngu -lz -lfat -lwiiuse -lbte -logc -
 #---------------------------------------------------------------------------------
 LIBDIRS	:=
 
-LIBGRR := F:/GRRLIB/GRRLIB
 LIBSAUTRE := $(LIBGRR)/lib/freetype $(LIBGRR)/lib/jpeg $(LIBGRR)/lib/png $(LIBGRR)/lib/pngu $(LIBGRR)/lib/zlib
 
 #---------------------------------------------------------------------------------
@@ -54,6 +65,7 @@ ifneq ($(BUILD),$(notdir $(CURDIR)))
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
 
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
+					$(foreach dir,$(SOURCES_DIRECT),$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
 
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
@@ -63,6 +75,7 @@ export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 #---------------------------------------------------------------------------------
 CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
+CPPFILES_EXTERN	:=	$(foreach dir,$(SOURCES_DIRECT),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
@@ -77,25 +90,24 @@ else
 endif
 
 export OFILES	:=	$(addsuffix .o,$(BINFILES)) \
-					$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) \
+					$(CPPFILES:.cpp=.o) $(CPPFILES_EXTERN:.cpp=.o) $(CFILES:.c=.o) \
 					$(sFILES:.s=.o) $(SFILES:.S=.o)
 
 #---------------------------------------------------------------------------------
 # build a list of include paths
 #---------------------------------------------------------------------------------
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
-					$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
+					$(foreach dir,$(OTHER_INCLUDES),-I$(dir)) \
 					-I$(CURDIR)/$(BUILD) \
-					-I$(LIBOGC_INC) \
-					-I F:/GRRLIB/GRRLIB/GRRLIB
+					-I$(LIBOGC_INC)
 #---------------------------------------------------------------------------------
 # build a list of library paths
 #---------------------------------------------------------------------------------
-export LIBPATHS	:=	-LF:/GRRLIB/GRRLIB/GRRLIB \
+export LIBPATHS	:=	-L$(LIBGRRBIS) \
 					$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
 					$(foreach dir,$(LIBSAUTRE),-L$(dir)) \
 					-L$(LIBOGC_LIB)
-					
+
 
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
 .PHONY: $(BUILD) clean
@@ -103,7 +115,8 @@ export OUTPUT	:=	$(CURDIR)/$(TARGET)
 #---------------------------------------------------------------------------------
 $(BUILD):
 	[ -d $@ ] || mkdir -p $@
-	$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	#$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+	$(MAKE) -C $(BUILD) -f $(CURDIR)/Makefile
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...

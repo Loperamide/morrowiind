@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Clas.h"
+#include "Clas.h"
 
 Clas::Clas() {
 	// TODO Auto-generated constructor stub

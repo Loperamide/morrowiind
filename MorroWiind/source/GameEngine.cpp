@@ -5,27 +5,30 @@
  *      Author: jpCapelle
  */
 
-#include "headers/GameEngine.h"
-#include "headers/GraphicsEngine.h"
-#include <tinyxml.h>
-#include <tinystr.h>
-#include "headers/Tes3.h"
+#include "GameEngine.h"
+#include "GraphicsEngine.h"
+#include <tinyxml2.h>
+#include "Tes3.h"
 
 bool GameEngine::init(void){
 	//Chargement du fichier d'initialisation
-	TiXmlDocument initFile(INIFILEPATH);
-	bool loadOk = initFile.LoadFile();
-	if (!loadOk) return false;
+	//TiXmlDocument initFile(INIFILEPATH);
+	tinyxml2::XMLDocument document;
+	try{
+	    document.LoadFile(INIFILEPATH);
+    } catch (...) {
+        return false;
+    }
 
 	//Contrôle des paramètres
 	//et Chargement des données
-	TiXmlElement* racine = initFile.RootElement();
+	tinyxml2::XMLElement* racine = document.RootElement();
 	if (racine == NULL) return false;
 
-	TiXmlElement* subElement = racine->FirstChildElement();
+	tinyxml2::XMLElement* subElement = racine->FirstChildElement();
 	for(;;){
 		if (subElement==NULL) break;
-		//cout << subElement->GetText() << endl;
+		cout << subElement->GetText() << endl;
 		//Fichier ESM à charger
 		if (!strcmp("ESM",subElement->Value())){
 			Tes3::getInstance()->loadFile(subElement->GetText());

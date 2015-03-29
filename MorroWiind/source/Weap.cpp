@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Weap.h"
+#include "Weap.h"
 
 Weap::Weap() {
 	// TODO Auto-generated constructor stub

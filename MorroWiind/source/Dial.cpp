@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Dial.h"
+#include "Dial.h"
 
 Dial::Dial() {
 	// TODO Auto-generated constructor stub

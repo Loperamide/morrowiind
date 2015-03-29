@@ -5,7 +5,7 @@
  *      Author: jpCapelle
  */
 
-#include "headers/Soun.h"
+#include "Soun.h"
 
 Soun::Soun() {
 	// TODO Auto-generated constructor stub
