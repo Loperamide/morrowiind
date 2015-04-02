@@ -4,14 +4,14 @@
 .SUFFIXES:
 #---------------------------------------------------------------------------------
 ifeq ($(strip $(DEVKITPPC)),)
-$(error "Please set DEVKITPPC in your environment. export DEVKITPPC=<path to>devkitPPC")
+	$(error "Please set DEVKITPPC in your environment. export DEVKITPPC=<path to>devkitPPC")
 endif
 
 include $(DEVKITPPC)/wii_rules
 
 GRRLIB_INCLUDE := D:/LibsCpp/GRRLIB/GRRLIB/GRRLIB
 TYNIXML_INCLUDE := D:/LibsCpp/tinyxml2-master
-TYNIXML_SOURCE := D:/LibsCpp/tinyxml2-master
+TYNIXML_LIB := D:/LibsCpp/tinyxml2-master/tinyxml2/tinyxml2-cbp/bin/Release
 NIFLIB_INCLUDE := D:/LibsCpp/niflib-0.8.3-src/include
 IRRLICHT_INCLUDE := D:/LibsCpp/irrlicht-1.8/include
 LIBGRR := D:\LibsCpp\GRRLIB\GRRLIB
@@ -26,8 +26,6 @@ LIBGRRBIS := D:\LibsCpp\GRRLIB\GRRLIB\lib
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
 SOURCES		:=	source
-SOURCES_DIRECT		:=	$(TYNIXML_SOURCE)
-#SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	headers
 OTHER_INCLUDES := $(GRRLIB_INCLUDE) $(TYNIXML_INCLUDE) $(NIFLIB_INCLUDE)
@@ -45,7 +43,7 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -lgrrlib -lfreetype -ljpeg -lpng -lpngu -lz -lfat -lwiiuse -lbte -logc -lm
+LIBS	:= -lgrrlib -lfreetype -ljpeg -lpng -lpngu -lz -lfat -lwiiuse -lbte -logc -lm -ltinyxml2
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
@@ -53,7 +51,8 @@ LIBS	:= -lgrrlib -lfreetype -ljpeg -lpng -lpngu -lz -lfat -lwiiuse -lbte -logc -
 #---------------------------------------------------------------------------------
 LIBDIRS	:=
 
-LIBSAUTRE := $(LIBGRR)/lib/freetype $(LIBGRR)/lib/jpeg $(LIBGRR)/lib/png $(LIBGRR)/lib/pngu $(LIBGRR)/lib/zlib
+LIBSAUTRE := $(LIBGRR)/lib/freetype $(LIBGRR)/lib/jpeg $(LIBGRR)/lib/png $(LIBGRR)/lib/pngu $(LIBGRR)/lib/zlib \
+				$(TYNIXML_LIB)
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -65,7 +64,6 @@ ifneq ($(BUILD),$(notdir $(CURDIR)))
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
 
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
-					$(foreach dir,$(SOURCES_DIRECT),$(dir)) \
 					$(foreach dir,$(DATA),$(CURDIR)/$(dir))
 
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
@@ -75,7 +73,6 @@ export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 #---------------------------------------------------------------------------------
 CFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
-CPPFILES_EXTERN	:=	$(foreach dir,$(SOURCES_DIRECT),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
@@ -90,7 +87,7 @@ else
 endif
 
 export OFILES	:=	$(addsuffix .o,$(BINFILES)) \
-					$(CPPFILES:.cpp=.o) $(CPPFILES_EXTERN:.cpp=.o) $(CFILES:.c=.o) \
+					$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) \
 					$(sFILES:.s=.o) $(SFILES:.S=.o)
 
 #---------------------------------------------------------------------------------

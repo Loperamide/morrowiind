@@ -1,0 +1,4 @@
+- Récupérer les librairies
+- Modifier le Makefile
+- recompiler la lib tinyxml2 avec le compilo PPC et les options adéquates
+- recompiler le projet
